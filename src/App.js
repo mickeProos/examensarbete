@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Sidebar from './components/Sidebar';
+import TextBox from './components/TextBox';
+import Info from './pages/Info'
+import Props from './pages/Props'
+import Hooks from './pages/Hooks'
+import ConditionalRendering from './pages/ConditionalRendering'
+import Home from './pages/Home';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <div className="layout">
+            <Navbar/>
+            <Routes>
+                <Route path='/' element= {<Home/>} />
+                <Route path='/info' element= {<Info/>} />
+                <Route path='/props' element= {<Props/>} />
+                <Route path='/hooks' element= {<Hooks/>} />
+                <Route path='/ConditionalRendering' element= {<ConditionalRendering/>} />
+            </Routes>
+            <Sidebar/>
+          </div>
     </div>
+    
   );
 }
 
