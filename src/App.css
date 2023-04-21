@@ -1,38 +1,264 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', 'sans-serif';
+  box-sizing: border-box;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  background-color: #000942;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.home {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position:fixed;
+
+  background-image: url(images/photo.png);
+  background-size: 35%;
+  background-repeat: no-repeat;
+  background-position: 65% 10%;
+  
+}
+@media only screen and (max-width: 1080px){
+ 
+  .home{
+    background-size: 65%;
+    background-position: 100% 85%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.layout {
+  width: 100vw;
+  height: 100%;
+  background: #000942;
+  padding-left: 15%;
+  padding-right: 8%;
+  
+}
+
+.top-nav{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0 15px;
+  border-bottom: 1px solid #bababa;
+  position: sticky;
+  z-index:2;
+
+  @media screen and (max-width: 960px) {
+      transition: 0.8s all ease
+  }
+
+}
+
+.top-nav ul li{
+  list-style:none;
+  display:inline-block;
+  margin-right:30px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.top-nav ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size:15px;
+}
+
+.top-nav ul li a:hover{
+  color:#e91e63;
+}
+
+button{
+  background: #e91e63;
+  color: #fff;
+  border: 0;
+  outline: 0;
+  border-radius:30px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.side-nav {
+  position:fixed;
+  /* background: #e91e63; */
+  left:0;
+  top:0;
+  width: 100px;
+  height: 100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
   flex-direction: column;
+  padding: 50px 0;
+  background:linear-gradient(#00bcd4, #e91e63, #3f51b5, #00bcd4);
+  background-size: 100% 500%;
+  background-position: 0 40%;
+}
+
+.side-nav:hover{
+  animation: backcolor 20s linear infinite reverse;
+}
+@keyframes backcolor {
+  0%{
+    background-position: 0 0%;
+  }
+  100%{
+    background-position: 0 400%;
+  }
+}
+
+.side-nav .logo{
+  width: 60px;
+  cursor:pointer;
+}
+
+.side-nav a{
+  text-decoration: none;
+  color:#fff;
+  transform:rotate(-90deg) translateX(50%);
+  width: max-content;
+}
+
+.text-box{
+  margin-top: 15%;
+  font-size: 18px;
+  color:#fff;
+}
+
+.text-box h1{
+  font-weight:500;
+  font-size: 86px;
+  max-width: 550px;
+  line-height: 95px;
+  margin-top: 10px;
+  margin-bottom:30px;
+}
+
+.text-box .icon{
+  background: #e91e63;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.text-box .icon img{
+  width:15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* resposnive */
+
+.top-nav .nav-btn {
+  padding:5px;
+  cursor:pointer;
+  background:transparent;
+  border:none;
+  outline:none;
+  color:#fff;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .top-nav .nav-btn {
+    visibility:visible;
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+
+  .side-nav {
+    width:11%;
   }
+
+  .side-nav .logo {
+    width: 33px;
+  }
+
+  .top-nav ul {
+    position:fixed;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #000942;
+    transition: 1s;
+    transform: translateY(-100vh);
+
+  }
+
+  .top-nav .responsive-nav {
+    transform: none;
+  }
+
+  ul .nav-close-btn {
+    position:absolute;
+    top: 2rem;
+    right:2rem;
+  }
+
+  ul a {
+    font-size: 1.5rem;
+  }
+}
+
+.info-container {
+  width:100%;
+  height:100%;
+  padding-right: 8%;
+  padding-top:3%;
+  color: #fff;
+ 
+}
+
+h2 {
+  color:black;
+}
+
+.card {
+  background: #fff;
+  padding: 3rem;
+  width: 25rem;
+  cursor:pointer;
+  margin:20px;
+}
+@media only screen and (max-width: 1080px){
+ 
+  .card{
+    width: 20rem;
+    z-index: 1;
+  }
+  .card p{
+    width: 15rem;
+  }
+}
+
+.card p {
+  padding-top: 1rem;
+  line-height: 150%;
+  color:black;
+}
+
+.expand {
+  width: 20rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
