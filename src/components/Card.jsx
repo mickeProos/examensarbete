@@ -9,11 +9,13 @@ const Card = () => {
   
   return(
   <motion.div 
+  initial={{ y: -350}}
+  animate={{y: -100}}
   transition={{layout: { duration: 1, type: "spring" }}} 
   layout 
   onClick={() => setIsOpen(!isOpen)} 
   className="card"
-  style={{borderRadius: '1rem', boxShadow: '0px 10px 30px rgba(0,0,0,0.5)'}}
+  style={{borderRadius: '1rem', boxShadow: '0px 5px 2px #bababa'}}
   >
     <motion.h2 layout="position">framer motion 🚀</motion.h2>
     {isOpen && ( 

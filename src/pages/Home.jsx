@@ -1,5 +1,6 @@
 import React from "react";
 import arrow from '../images/arrow.png';
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -9,9 +10,11 @@ const Home = () => {
     <div className="text-box">
     <p>WE HELP YOU TO</p>
     <h1>Design your React app</h1>
-    <button>
-    <img src={arrow} className="Icon"></img>
+    <Link to="/info">
+    <button className="arrow-button">
+    <img src={arrow}className="Icon"></img>
     </button>
+    </Link>
   </div>
   </div>
   )
