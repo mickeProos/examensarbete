@@ -187,22 +187,19 @@ button{
   justify-content: center;
 }
 
+.icon {
+  width: 15px;
+}
+
 .text-box .icon img{
   width:15px;
 }
 
 img {
-  max-width: 500px;
+  max-width: 70%;
 }
-@media screen and (max-width:1050px) {
-  img {
-    width:200px;
-  }
-}
-.img-container {
-  display: flex;
-  justify-content: center;
-}
+
+
 
 /* resposnive */
 
@@ -281,17 +278,16 @@ img {
   cursor:pointer;
   margin:20px;
   border: 1px solid #bababa;
-  float:left;
-  
 }
 @media only screen and (max-width: 1080px){
  
   .card{
-    width: 20rem;
+    width: 18rem;
     z-index: 1;
+    margin-left:0;
   }
   .card p{
-    width: 15rem;
+    width: 13rem;
   }
   .card-container {
     display: flex;
