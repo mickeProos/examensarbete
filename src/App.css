@@ -23,8 +23,21 @@ body {
   background-size: 35%;
   background-repeat: no-repeat;
   background-position: 65% 10%;
+  animation: fadeIn 2s;
+      opacity: 1;
+
+ 
   
-}
+      
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+       opacity: 1;
+      }
+    }
 @media only screen and (max-width: 1080px){
  
   .home{
@@ -75,6 +88,14 @@ body {
   color:#e91e63;
 }
 
+a {
+  text-decoration: none;
+}
+
+li { 
+  text-decoration: none;
+}
+
 button{
   background: #e91e63;
   color: #fff;
@@ -83,6 +104,14 @@ button{
   border-radius:30px;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+
+@media screen and (max-width: 1050px) {
+  
+  .arrow-button {
+    margin-bottom: 100px;
+  }
 }
 
 .side-nav {
@@ -105,6 +134,7 @@ button{
 .side-nav:hover{
   animation: backcolor 20s linear infinite reverse;
 }
+
 @keyframes backcolor {
   0%{
     background-position: 0 0%;
@@ -141,6 +171,12 @@ button{
   margin-bottom:30px;
 }
 
+@media screen and (max-width:1050px) {
+  .text-box h1 {
+    font-size: 62px;
+  }
+}
+
 .text-box .icon{
   background: #e91e63;
   width: 70px;
@@ -153,6 +189,19 @@ button{
 
 .text-box .icon img{
   width:15px;
+}
+
+img {
+  max-width: 500px;
+}
+@media screen and (max-width:1050px) {
+  img {
+    width:200px;
+  }
+}
+.img-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* resposnive */
@@ -176,11 +225,11 @@ button{
   }
 
   .side-nav {
-    width:11%;
+    width:10%;
   }
 
   .side-nav .logo {
-    width: 33px;
+    width: 30px;
   }
 
   .top-nav ul {
@@ -218,22 +267,22 @@ button{
 .info-container {
   width:100%;
   height:100%;
-  padding-right: 8%;
   padding-top:3%;
   color: #fff;
  
 }
 
-h2 {
-  color:black;
-}
 
 .card {
-  background: #fff;
+  height:100%;
+  background: transparent;
   padding: 3rem;
-  width: 25rem;
+  width: 100%;
   cursor:pointer;
   margin:20px;
+  border: 1px solid #bababa;
+  float:left;
+  
 }
 @media only screen and (max-width: 1080px){
  
@@ -244,21 +293,76 @@ h2 {
   .card p{
     width: 15rem;
   }
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+  }
 }
 
 .card p {
   padding-top: 1rem;
   line-height: 150%;
-  color:black;
+  color: #fff;
 }
 
-.expand {
+#expand {
   width: 20rem;
 }
 
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
+
+
+ form {
+  display:flex;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 30px;
+  margin: 20px;
+  padding:20px;
+  background:transparent;
+  background-size: 100% 500%;
+  background-position: 0 40%;
 }
+
+h2, label{
+  color: white;
+}
+
+
+input {
+  width:90%;
+  padding:10px;
+  margin:20px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+}
+
+a, a:visited {
+  color: #fff;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+font-family: 'Nunito', sans-serif;
+font-size: 22px;
+padding: 0.25rem;
+border-radius: 0.5rem;
+}
+
+
+
+

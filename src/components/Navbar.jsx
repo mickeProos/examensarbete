@@ -1,11 +1,20 @@
 import React from "react";
 import {useRef} from "react"
 import {FaBars, FaTimes} from "react-icons/fa"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import {useCookies} from 'react-cookie'
 
 const Navbar = () => {
 
+  const [cookies, setCookies] = useCookies(["access_token"])
+  const navigate = useNavigate()
   const navRef = useRef(false)
+
+  const logout = () => {
+    setCookies("access_token", "")
+    window.localStorage.removeItem("userID")
+    navigate("/auth")
+  }
 
   const toggleNavbar = () => {
     navRef.current.classList.toggle('responsive-nav')
@@ -17,9 +26,11 @@ const Navbar = () => {
               <ul ref={navRef}>
                 <li><Link onClick={toggleNavbar} to="/">HOME</Link></li>
                 <li><Link onClick={toggleNavbar} to="/info">INFO</Link></li>
-                <li><Link onClick={toggleNavbar} to="/props">PROPS</Link></li>
-                <li><Link onClick={toggleNavbar} to="/hooks">HOOKS</Link></li>
-                <li><Link onClick={toggleNavbar} to="/conditionalrendering">CONDITIONAL RENDERING</Link></li>
+                
+                {!cookies.access_token ? ( <li></li>
+              ) :(
+                <li><Link onClick={toggleNavbar} to="/create-card">CREATE CARD</Link></li>
+              )}
               <button className="nav-btn nav-close-btn" onClick={toggleNavbar}>
                 <FaTimes/>
               </button>
@@ -28,7 +39,11 @@ const Navbar = () => {
               <button className="nav-btn" onClick={toggleNavbar}>
                 <FaBars/>
               </button>
-              <button onClick={() => window.open( 'https://react.dev/learn')}>React documentation</button>
+              {!cookies.access_token ? (<Link to="/auth"><button>Login / Register </button></Link>
+              ) :(
+                <button onClick={logout}>Logout</button>
+              )}
+             
     </div>
   )
 }
