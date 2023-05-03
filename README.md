@@ -1,4 +1,4 @@
-Project need two terminals to get started.
+Project needs two terminals to get started.
 
 first terminal (backend)
 cd react-helper
