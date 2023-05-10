@@ -26,7 +26,7 @@ const Navbar = () => {
               <ul ref={navRef}>
                 <li><Link onClick={toggleNavbar} to="/">HOME</Link></li>
                 <li><Link onClick={toggleNavbar} to="/info">INFO</Link></li>
-                
+                {/*If there are no cookies.access_token, you are not logged in and a empty <li> tag will display */}
                 {!cookies.access_token ? ( <li></li>
               ) :(
                 <li><Link onClick={toggleNavbar} to="/create-card">CREATE CARD</Link></li>
@@ -39,6 +39,7 @@ const Navbar = () => {
               <button className="nav-btn" onClick={toggleNavbar}>
                 <FaBars/>
               </button>
+              {/* If you are logged in change button to log out */ }
               {!cookies.access_token ? (<Link to="/auth"><button>Login / Register </button></Link>
               ) :(
                 <button onClick={logout}>Logout</button>

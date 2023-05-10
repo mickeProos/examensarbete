@@ -3,15 +3,12 @@ import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion"
 
-
-
-
-
 const Info = () => {
   const [cards, setCards] = useState([])
   const [isOpen, setIsOpen] = useState(false)
    
   useEffect(() => {
+    //fetching card data from mongoDB
     const fetchCards = async () => {
       try {
        const response = await axios.get("http://localhost:3001/cards")
@@ -51,8 +48,6 @@ const Info = () => {
    ) }
        </motion.div >
       ))}
-
-    
   </div>
   </div>
   )

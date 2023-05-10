@@ -16,13 +16,13 @@ const CreateCard = () => {
     userOwner: userID
   })
 
-  
-
+  // reference to what you put in the inputfield
   const handleChange = (event) => {
     const {name,value} = event.target;
     setCard({...card, [name]: value})
   }
 
+  //send data to backend, you need to be authorized
   const onSubmit = async(event) => {
       event.preventDefault();
       try {

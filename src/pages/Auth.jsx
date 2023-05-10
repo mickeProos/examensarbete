@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from 'react-cookie'
 import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export const Auth = () => {
   return (
     <div className="auth">
       <Register />
       <Login />
+      <Link to="/forgot-password"><p>forgot password?</p></Link>
     </div>
   );
 };
@@ -22,15 +24,17 @@ const Login = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-
+    //try post login strings
     try {
-      const result = await axios.post("http://localhost:3001/auth/login", {
+      const response = await axios.post("http://localhost:3001/auth/login", {
         username,
         password,
       });
-
-      setCookies("access_token", result.data.token);
-      window.localStorage.setItem("userID", result.data.userID);
+      //set response from the api to have a value of response.data.token
+      setCookies("access_token", response.data.token);
+      //set userID in localstorage when logged in //application//local storage//
+      window.localStorage.setItem("userID", response.data.userID);
+      //redirect to homepage
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -55,6 +59,7 @@ const Register = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
+    //post new user to api
     try {
       await axios.post("http://localhost:3001/auth/register", {
         username,
@@ -78,6 +83,7 @@ const Register = () => {
   );
 };
 
+//using props to differentiate the two forms
 const Form = ({username, setUsername, password, setPassword, label, onSubmit}) => {
     return (
       <div className="auth-container">
@@ -86,7 +92,7 @@ const Form = ({username, setUsername, password, setPassword, label, onSubmit}) =
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
-            type="text"
+            type="email"
             id="username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}

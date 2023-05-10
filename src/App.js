@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import { Auth } from './pages/Auth';
 import { Route, Routes } from 'react-router-dom';
 import CreateCard from './pages/Create-card';
+import ForgotPassword from './pages/ForgotPassword'
+import ResetPassword from './pages/ResetPassword';
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
       <Routes>
           <Route path='/' element= {<Home/>} />
           <Route path='/info' element= {<Info/>} />
+          <Route path='/forgot-password' element= {<ForgotPassword/>} />
+          <Route path='/reset-password' element= {<ResetPassword/>} />
           <Route path='/auth' element= {<Auth/>} />
           <Route path='/create-card' element= {<CreateCard/>} />
       </Routes>
