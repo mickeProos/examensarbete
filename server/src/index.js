@@ -5,13 +5,12 @@ import { userRouter } from './routes/users.js'
 import { cardsRouter } from './routes/cards.js'  
 import { UserModel } from "./models/users.js";
 import sendEmail from "./utils/sendEmail.js";
-//import { Jwt } from "jsonwebtoken";
 import dotenv from 'dotenv'
 dotenv.config()
 
 
 const app = express();
-const JWT_SECRET = 'secret'
+
 
 app.use(express.json());
 app.use(cors());
@@ -83,8 +82,6 @@ app.put('/users/:id', async(req,res) => {
     res.status(500).json(error)
   }
 })
-
-
 
 const PORT = process.env.PORT || 3001
 

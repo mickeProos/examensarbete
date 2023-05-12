@@ -9,12 +9,13 @@ export const Auth = () => {
     <div className="auth">
       <Register />
       <Login />
-      <Link to="/forgot-password"><p>forgot password?</p></Link>
+     {/* <Link to="/forgot-password"><p>forgot password?</p></Link> */}
     </div>
   );
 };
 
 const Login = () => {
+  //session id
   const [_, setCookies] = useCookies(["access_token"]);
 
   const [username, setUsername] = useState("");

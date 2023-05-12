@@ -11,9 +11,10 @@ const ResetPassword = () => {
   const onSubmit = async(event) => {
     event.preventDefault();
     try {
-      await axios.put("http://localhost:3001/users/:id", {
+      const response = await axios.put("http://localhost:3001/users/:id", {
         password
       });
+      console.log(response.data)
       alert("password changed, now log in");
       navigate('/auth')
     } catch (error) {
@@ -28,7 +29,7 @@ return (
   <form action="" method="post" className="contactForm" onSubmit={onSubmit}>
     <label htmlFor="email">Username</label>
     <input type="email" name="username" id="username" onChange={(event) => setUsername(event.target.value)}/>
-    <label htmlFor="email">New Password</label>
+    <label htmlFor="password">New Password</label>
     <input type="password" name="password" id="password" value={password} onChange={(event) => setPassword(event.target.value)}/>
     <button type="submit" value="submit">Submit</button> 
   </form>

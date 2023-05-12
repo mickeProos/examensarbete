@@ -303,11 +303,9 @@ img {
   color: #fff;
 }
 
-#expand {
-  width: 20rem;
+ul {
+  list-style-type: none;
 }
-
-
 
  form {
   display:flex;

@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import CreateCard from './pages/Create-card';
 import ForgotPassword from './pages/ForgotPassword'
 import ResetPassword from './pages/ResetPassword';
+import SavedCards from './pages/SavedCards'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/info' element= {<Info/>} />
           <Route path='/forgot-password' element= {<ForgotPassword/>} />
           <Route path='/reset-password' element= {<ResetPassword/>} />
+          <Route path='/saved-cards' element= {<SavedCards/>} />
           <Route path='/auth' element= {<Auth/>} />
           <Route path='/create-card' element= {<CreateCard/>} />
       </Routes>
