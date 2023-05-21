@@ -5,7 +5,7 @@ const Sidebar = () => {
   return(
       <div className="side-nav">
           <img src={logo} className="logo"></img> 
-          <a href="/info">GET STARTED</a>
+          <a href="/auth">GET STARTED</a>
        </div>
   )
 }

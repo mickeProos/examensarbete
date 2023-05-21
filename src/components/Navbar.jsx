@@ -25,12 +25,11 @@ const Navbar = () => {
      
               <ul ref={navRef}>
                 <li><Link onClick={toggleNavbar} to="/">HOME</Link></li>
-                <li><Link onClick={toggleNavbar} to="/info">INFO</Link></li>
-                
                 {/*If there are no cookies.access_token, you are not logged in and a empty <li> tag will display */}
                 {!cookies.access_token ? ( <li></li>
               ) :(
                 <>
+                <li><Link onClick={toggleNavbar} to="/info">INFO</Link></li>
                 <li><Link onClick={toggleNavbar} to="/saved-cards">SAVED CARDS</Link></li>
                 <li><Link onClick={toggleNavbar} to="/create-card">CREATE CARD</Link></li>
                 </>

@@ -10,7 +10,7 @@ const Home = () => {
     <div className="text-box">
     <p>WE HELP YOU TO</p>
     <h1>Design your React app</h1>
-    <Link to="/info">
+    <Link to="/auth">
     <button className="arrow-button">
     <img src={arrow}className="Icon"></img>
     </button>

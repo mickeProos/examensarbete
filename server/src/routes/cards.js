@@ -41,6 +41,7 @@ router.put("/", async (req,res) => {
   }
 })
 
+//get saved cards
 router.get("/savedCards/ids/:userID", async (req, res) => {
   try {
     const user = await UserModel.findById(req.params.userID)
@@ -50,6 +51,7 @@ router.get("/savedCards/ids/:userID", async (req, res) => {
   }
 })
 
+// get single saved card
 router.get("/savedCards/:userID", async (req, res) => {
   try {
     const user = await UserModel.findById(req.params.userID)
